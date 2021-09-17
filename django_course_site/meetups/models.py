@@ -12,6 +12,13 @@ class Location(models.Model):
         return f'{self.name}'
 
 
+class Participant(models.Model):
+    email = models.EmailField(unique=True)
+
+    def __str__(self):
+        return self.email
+
+
 # precisa importar Model
 class Meetup(models.Model):
     title = models.CharField(max_length=200)
@@ -19,6 +26,7 @@ class Meetup(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to="images")
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    participants = models.ManyToManyField(Participant, blank=True, null=True)
 
     # pagina admin mostra como nome a string do modelo
     def __str__(self):
