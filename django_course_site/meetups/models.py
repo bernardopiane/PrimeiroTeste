@@ -9,3 +9,7 @@ class Meetup(models.Model):
     slug = models.SlugField(unique=True)
     description = models.TextField()
     image = models.ImageField(upload_to="images")
+
+    # pagina admin mostra como nome a string do modelo
+    def __str__(self):
+        return f'{self.title} - {self.slug}'
