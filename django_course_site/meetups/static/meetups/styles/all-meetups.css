@@ -45,15 +45,15 @@ ol {
 }
 
 .meetup-actions {
-  margin-top: 1.5rem;
   text-align: right;
+  display: flex;
+  align-self: flex-end;
 }
 
 .meetup-actions .btn {
   background-color: #cb82fb;
   border-color: #cb82fb;
   color: #350490;
-  padding: 0.75rem 2rem;
 }
 
 .meetup-actions .btn:hover {
